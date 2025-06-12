@@ -4,8 +4,8 @@ import ssd1306
 class screen:    
     
     def __init__(self, scl, sda):
-        self.i2c = I2C(0, scl=Pin(scl), sda=Pin(sda)) 			# Initialize I2C with corresponding pins
-        self.display = ssd1306.SSD1306_I2C(128, 32, self.i2c) 	# Initialize Display
+        self.i2c = I2C(1, scl=Pin(scl), sda=Pin(sda)) 			# Initialize I2C with corresponding pins
+        self.display = ssd1306.SSD1306_I2C(128, 64, self.i2c) 	# Initialize Display
         self.display.fill_rect(0, 0, 128, 64, 0) 				# Clear Screen
         
     def writeStatus(self, heading, location):
